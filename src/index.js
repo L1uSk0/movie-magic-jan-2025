@@ -13,6 +13,7 @@ app.set('views','./src/views');
 
 
 app.use('/static', express.static('src/public'));
+app.use(express.urlencoded({extended:false})); //learn express to pars from data
 
 app.use(routes);
 
