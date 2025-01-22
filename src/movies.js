@@ -7,7 +7,7 @@ export default  [
     imageUrl : '/static/img/jungle-cruise.jpeg',
     year: "2021", 
     director: "Jaume Collet-Serra",
-    rating:"7.2",
+    rating:7.2,
     category:"Movie"
     },
     {
@@ -18,7 +18,7 @@ export default  [
         imageUrl : '/static/img/the-little-mermaid.jpg',
         year: "2023", 
         director: "Rob Marshall",
-        rating:"6.6",
+        rating:6.6,
         category:"Movie"
         },
         {
@@ -29,7 +29,7 @@ export default  [
             director: 'Anthony Ruso',
             year: '2019',
             imageUrl: 'https://preview.redd.it/fanart-avengers-endgame-poster-re-edit-with-some-of-the-v0-a1h3w7blmm2a1.jpg?width=1080&crop=smart&auto=webp&s=ca3bf706b071c0f11ccd58cdda8dd66751598a62',    
-            rating: '8.4',
+            rating: 8.4,
             description: "After the devastating events of Отмъстителите: Война без край (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
           }
 ]
