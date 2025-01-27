@@ -22,12 +22,16 @@
 
                 <p class="disc">Description: {{movie.description}}</p>
                 <p class="card-category">Category: {{movie.category}}</p>
+                <div style="display:flex;justify-content:center">
+                 <a href="/movies/{{movie._id}}/attach-cast" class="details">Attach</a>
+                </div>
             </div>
         </div>
         <div class="card_right">
             <img src="{{movie.imageUrl}}" alt="{{movie.title}}">
         </div>
     </div>
+
 
     <div class="main-cast-card">
         <div class="cast-card">
