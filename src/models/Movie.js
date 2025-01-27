@@ -1,5 +1,5 @@
 import { ExpressHandlebars } from "express-handlebars";
-import {Schema,model} from "mongoose";
+import {Schema,model , Types} from "mongoose";
 
 //create schema
 
@@ -12,6 +12,10 @@ const movieSchema = new Schema({
     imageUrl:String,
     rating:Number,
     description:String,
+    casts:[{
+        type:Types.ObjectId,
+        ref:'Cast',
+    }]
 });
 
 //create model
