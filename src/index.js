@@ -2,15 +2,19 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
+import 'dotenv/config';
+
 import routes from './routes.js';
 import showRatingHelper from './helpers/ratingHelper.js';
+import { authMiddleware } from './middlewares/auth-middleware.js';
+
 
 const app = express();
 
 //db configuration
 try {
-    const uri = 'mongodb://localhost:27017/magic-movies-jan2025'
-    await mongoose.connect(uri);
+    const defaultUri = 'mongodb://localhost:27017/magic-movies-jan2025';
+    await mongoose.connect(process.env.DATABASE_URI ?? defaultUri);
 
     console.log('db connected successfully');
 } catch (error) {
@@ -36,6 +40,7 @@ app.set('views','./src/views');
 app.use('/static', express.static('src/public'));
 app.use(express.urlencoded({extended:false})); //learn express to pars from data
 app.use(cookieParser());
+app.use(authMiddleware);
 
 
 app.use(routes);

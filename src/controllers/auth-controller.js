@@ -27,7 +27,7 @@ try {
     res.cookie('auth',token);
     res.redirect('/');
 } catch (error) {
-    console.log(err.message);
+    console.log(error.message);
     res.redirect('/404')
 }
 
