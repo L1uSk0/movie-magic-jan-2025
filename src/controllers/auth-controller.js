@@ -34,4 +34,9 @@ try {
  
 })
 
+authController.get('/logout', (req, res) => {
+  res.clearCookie('auth');
+  res.redirect('/');
+})
+
 export default authController;
