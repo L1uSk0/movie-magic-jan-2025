@@ -19,8 +19,9 @@ movieController.get('/create' , (req,res) => {
 
 movieController.post('/create' , async (req,res) => {
     const newMovie = req.body;
+    const userId = req.user?.id;
 
-   await movieService.create(newMovie);
+   await movieService.create(newMovie,userId);
 
     res.redirect('/');
 
@@ -29,11 +30,12 @@ movieController.post('/create' , async (req,res) => {
 
 movieController.get('/:movieId/details' , async (req,res)=> {
 
-    
+
     const movieId = req.params.movieId;
     const movie = await movieService.getOneWithCasts(movieId);
+    const isCreator = movie.creator && movie.creator.toString() == req.user.id;
 
-    res.render('movie/details', {movie});
+    res.render('movie/details', {movie,isCreator});
 })
 
 movieController.get('/:movieId/attach-cast', async (req,res) =>{
