@@ -2,7 +2,7 @@ import express from "express";
 
 const authController = express.Router();
 
-authController.get('register' ,(req, res) => {
+authController.get('/register' ,(req, res) => {
   res.render('auth/register');
 })
 
