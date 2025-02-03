@@ -14,7 +14,12 @@ try {
   await authService.register(userData);
   
 } catch (error) {
+  //log the error
   console.log(getErrorMassage(err));
+  //return to register page
+  con
+  return res.render('/auth/register',{error});
+
   // console.log(error.errors.email.message);
   // console.log(error.errors.password.message);
 }
