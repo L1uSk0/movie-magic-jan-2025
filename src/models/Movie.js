@@ -4,7 +4,12 @@ import {Schema,model , Types} from "mongoose";
 //create schema
 
 const movieSchema = new Schema({
-    title:String,
+    title:{
+        type:String,
+        required:[true,'Title is required'],
+        minlength:5,
+        
+    },
     category:String,
     genre:String,
     director:String,
