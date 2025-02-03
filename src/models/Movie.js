@@ -11,7 +11,16 @@ const movieSchema = new Schema({
         maxLength:250,
         match: [/^[A-Za-z 0-9]+$/ , 'Title should be alphanumeric , digits and whitespaces'],
     },
-    category:String,
+    category:{
+        type:String,
+        required:true,
+        enum:['tv-show',
+            'animation',
+            'movie',
+            'documentary',
+            'short-film'
+        ],
+    },
     genre:{
         type:String,
         required:[true,'Genre is required'],
